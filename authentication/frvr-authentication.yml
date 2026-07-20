@@ -1,0 +1,38 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.frvr.com/modules/auth/
+docs: https://docs.frvr.com/modules/auth/
+summary:
+  types: [oauth2-jwt, platform-federated, anonymous]
+  token_format: JWT bearer (FRVR.auth.getAccessToken())
+  scheme_surface: SDK-mediated (no public REST securityScheme; auth is handled by the FRVR JS SDK)
+model: >-
+  FRVR.auth authenticates the current player against FRVR's backend — either with a
+  FRVR account, a platform provider (Facebook, Google Play, Apple, ...), or
+  anonymously. The SDK auto-attempts login in priority order: cached token from
+  storage (if valid) -> platform credentials from the host channel -> anonymous
+  sign-in (if enabled). It returns a JWT access token for backend calls, which the
+  SDK refreshes in the background at ~60% of its TTL.
+methods:
+  - name: FRVR.auth.isLoggedIn()
+    purpose: Confirm an active session.
+  - name: FRVR.auth.getAccessToken()
+    purpose: Return the JWT for authenticated backend calls.
+  - name: FRVR.auth.getFRVRID()
+    purpose: Retrieve the player's stable FRVR identifier.
+  - name: FRVR.auth.loginToFRVR({ platform, credentials })
+    purpose: Explicit login with a FRVR account or a platform provider.
+  - name: FRVR.auth.registerOnFRVR({ email, password, firstName, lastName }, autoLogin)
+    purpose: Register a new FRVR account and optionally auto-login.
+  - name: FRVR.auth.addStatusChangeListener(cb)
+    purpose: Subscribe to auth status changes ({ isLoggedIn, platform }).
+providers:
+  - frvr
+  - facebook-instant
+  - google-play
+  - apple
+  - anonymous
+notes: >-
+  Anonymous sessions still persist a stable ID and can be upgraded to a real
+  account later. Configure with FRVR.config.auth = {} to use the channel's default
+  provider.
