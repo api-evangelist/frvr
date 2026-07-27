@@ -1,7 +1,15 @@
 aid: frvr
 name: FRVR
-description: 'FRVR is a company surfaced as a portfolio company of accel and added to the API Evangelist
-  network as a stub for enrichment. Sector: gaming. This profile is a lead awaiting the enrichment pipeline.'
+description: >-
+  FRVR is a gaming company that builds and distributes instant, no-download HTML5
+  games across channels beyond the app stores — Facebook Instant, Google Play, iOS
+  WebView, Samsung, Xiaomi, and web portals. Its developer surface is the FRVR SDK:
+  a single JavaScript SDK (with thin wrappers for Unity WebGL exports, Cocos Creator,
+  and Construct 3) that integrates ads, in-app purchases, analytics, auth, local and
+  cloud storage, social/friends, leaderboards, tournaments, challenges, consent, and
+  notifications into a game, then adapts per distribution channel while FRVR's release
+  pipeline injects the correct channel bundle at build time. FRVR also operates the
+  UpIt no-code game creation tool. Backed by Accel.
 url: https://raw.githubusercontent.com/api-evangelist/frvr/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,13 +17,48 @@ x-backed-by:
 - accel
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
+image: https://frvr.com/i/share-image.jpg
 tags:
 - Company
 - Gaming
-apis: []
+- Games
+- Game Development
+- SDK
+- HTML5
+- Instant Games
+- Monetization
+- Ads
+- In-App Purchases
+apis:
+- name: FRVR SDK
+  description: >-
+    The FRVR games SDK — one JavaScript SDK (plus Unity, Cocos Creator, and Construct 3
+    wrappers) that integrates ads, IAP, analytics, auth, storage, social, leaderboards,
+    tournaments, and notifications into HTML5 games and adapts per distribution channel.
+  humanURL: https://docs.frvr.com/
+  baseURL: https://cdn.frvr.com/sdk/
+  properties:
+  - type: Documentation
+    url: https://docs.frvr.com/
+  - type: GettingStarted
+    url: https://docs.frvr.com/start/overview/
+  - type: APIReference
+    url: https://docs.frvr.com/reference/channels/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -24,3 +67,44 @@ maintainers:
 common:
 - type: Website
   url: https://frvr.com/
+- type: DeveloperPortal
+  url: https://developers.frvr.com/
+- type: Documentation
+  url: https://docs.frvr.com/
+- type: GettingStarted
+  url: https://docs.frvr.com/start/overview/
+- type: APIReference
+  url: https://docs.frvr.com/reference/channels/
+- type: Support
+  url: https://docs.frvr.com/reference/faq/
+- type: Blog
+  url: https://frvr.com/blog
+- type: GitHubOrganization
+  url: https://github.com/frvraps
+- type: SignUp
+  url: https://developers.frvr.com/signup
+- type: TermsOfService
+  url: https://frvr.com/legal#TermsofService
+- type: PrivacyPolicy
+  url: https://frvr.com/legal#PrivacyPolicy
+- type: LLMsTxt
+  url: llms/frvr-llms.txt
+- type: Packages
+  url: packages/frvr-packages.yml
+- type: SDKs
+  url: packages/frvr-packages.yml
+- type: Sandbox
+  url: sandbox/frvr-sandbox.yml
+- type: Authentication
+  url: authentication/frvr-authentication.yml
+- type: Conventions
+  url: conventions/frvr-conventions.yml
+- type: Conformance
+  url: conformance/frvr-conformance.yml
+- type: DomainSecurity
+  url: security/frvr-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

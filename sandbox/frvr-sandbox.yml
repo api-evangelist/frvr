@@ -1,0 +1,45 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.frvr.com/start/environments/
+docs:
+  - https://docs.frvr.com/start/environments/
+  - https://docs.frvr.com/try/
+summary: >-
+  FRVR exposes a three-mode environment model (dev / beta / prod) selected via
+  FRVR.init(), a dedicated dev channel bundle that stubs ads/IAP/platform bits so
+  flows can be clicked through without a live provider, and a hosted "Try it live"
+  playground that runs every SDK module in the browser via the dev channel.
+environments:
+  - mode: dev
+    init: "FRVR.init('dev')"
+    logging: verbose, color-coded warnings
+    backends: staging / mocked
+    providers: test ad providers
+  - mode: beta
+    init: "FRVR.init('beta')"
+    logging: verbose
+    backends: staging
+    providers: real ad providers, loose safety settings
+  - mode: prod
+    init: "FRVR.init('prod')"
+    default: true
+    logging: muted
+    backends: production
+    providers: real providers, strict safety checks
+dev_channel:
+  bundle: frvr-channel-dev.min.js
+  cdn: https://cdn.frvr.com/sdk/frvr-channel-dev.min.js
+  behavior: >-
+    Stubs ads, IAP, and other platform-specific bits so you can click through
+    flows without a live provider. Ship a real channel bundle (frvr-channel-web,
+    -facebook-instant, -ios, ...) for production — never the dev one.
+  warning: >-
+    A warning banner logs in the browser console whenever you run anything other
+    than prod, so you don't forget to flip it.
+playground:
+  url: https://docs.frvr.com/try/
+  description: Every SDK module running live in the browser via the dev channel.
+notes: >-
+  No published static test credentials / test cards (FRVR is a games SDK, not a
+  payments API); IAP is stubbed by the dev channel rather than exercised with
+  magic test values.

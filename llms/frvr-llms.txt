@@ -1,0 +1,84 @@
+# FRVR SDK
+
+> One JavaScript SDK that integrates ads, in-app purchases, analytics, auth, storage, social, leaderboards, tournaments, notifications, and more into HTML5 games — and then adapts per distribution channel (Facebook Instant, Google Play, iOS WebView, Samsung, Xiaomi, web portals). Available as a web SDK plus thin wrappers for Unity (WebGL exports), Cocos Creator, and Construct 3. FRVR's release pipeline injects the correct channel bundle per platform — developers don't pick it themselves.
+
+## Start here
+
+- [Overview](https://docs.frvr.com/start/overview/): What the SDK is, how core + channel packages fit together, and how configuration is injected by FRVR per release.
+- [Pick your engine](https://docs.frvr.com/start/pick-your-engine/): Web / Unity / Cocos / Construct 3 — pick the integration path that matches your stack.
+- [Configuration](https://docs.frvr.com/start/configuration/): Every field in `FRVR.config`. FRVR usually generates this for studios.
+- [Environments](https://docs.frvr.com/start/environments/): dev / beta / prod modes.
+- [Try it live](https://docs.frvr.com/try/): Every SDK module, running in the browser via the dev channel.
+
+## Web SDK (JavaScript)
+
+- [Web quickstart](https://docs.frvr.com/engines/web/quickstart/): Load the two `<script>` tags, configure, wire lifecycle hooks, bootstrap.
+- [Lifecycle & bootstrapping](https://docs.frvr.com/engines/web/lifecycle/): The five required `FRVR.lifecycle.*` hooks and the bootstrapper flow.
+- [Ads](https://docs.frvr.com/modules/ads/): Interstitial, rewarded, banner. `FRVR.ads.show(type)`.
+- [IAP](https://docs.frvr.com/modules/iap/): Catalog, purchase, consume, restore. `FRVR.iap.*`.
+- [Auth](https://docs.frvr.com/modules/auth/): Platform sign-in, FRVR accounts, anonymous fallback.
+- [Profile](https://docs.frvr.com/modules/profile/): Channel-provided player id/name/photo (name/photo unavailable on Facebook Instant under zero-permissions).
+- [Consent](https://docs.frvr.com/modules/consent/): CMP integration (TCFv2, CookiePro).
+- [Entry point](https://docs.frvr.com/modules/entrypoint/): Why this session started — deep links, invites, push-through.
+- [Analytics (tracker)](https://docs.frvr.com/modules/analytics/): `FRVR.tracker.ftue/levelStart/levelEnd/logEvent/logValuedEvent`.
+- [Local storage](https://docs.frvr.com/modules/local-storage/): Per-device async key-value.
+- [Cloud storage](https://docs.frvr.com/modules/cloud-storage/): Server-backed, cross-device key-value.
+- [Social](https://docs.frvr.com/modules/social/): FRVR friends graph + platform share/invite surfaces.
+- [Leaderboards](https://docs.frvr.com/modules/leaderboards/): Post scores, read rankings, timeline queries.
+- [Tournaments](https://docs.frvr.com/modules/tournaments/): Timed competitive events with shared payload and leaderboard.
+- [Challenges](https://docs.frvr.com/modules/challenges/): 1v1 / small-group challenge invites.
+- [Community](https://docs.frvr.com/modules/community/): Follow official page / join group CTAs.
+- [Shield](https://docs.frvr.com/modules/shield/): Facebook Instant overlay rendering. Required for rendering player identity on FB Instant post zero-permissions.
+- [Notifications](https://docs.frvr.com/modules/notifications/): Remote push + local device notifications.
+- [Shortcut](https://docs.frvr.com/modules/shortcut/): Add-to-home-screen prompt.
+- [Crossplay](https://docs.frvr.com/modules/crossplay/): Hand the player off to a companion mobile app.
+- [Navigation](https://docs.frvr.com/modules/navigation/): External links, channel app-store pages.
+- [Score (native)](https://docs.frvr.com/modules/score/): Submit score to Game Center / Play Games.
+
+## Unity (C# wrapper for WebGL exports)
+
+- [Unity quickstart](https://docs.frvr.com/engines/unity/quickstart/): Install the `.unitypackage`, Unity 6.1+, Brotli compression, Run-in-background OFF, audio import requirements.
+- [Unity lifecycle](https://docs.frvr.com/engines/unity/lifecycle/): Lifecycle is handled by the wrapper — no hooks to wire.
+- [Unity web optimization](https://docs.frvr.com/engines/unity/optimization/): Target ~8MB initial download via Web Stripping Tool Package + Addressables.
+- [Ads (Unity)](https://docs.frvr.com/engines/unity/modules/ads/): `FRVRSDK.Ad.ShowInterstitialAd` / `ShowRewardAd` with onStart/onError/onFinish callbacks.
+- [Analytics (Unity)](https://docs.frvr.com/engines/unity/modules/analytics/): `FRVRSDK.Analytics.LogFTUE/LogLevelStart/LogLevelEnd/LogEvent`.
+- [Storage (Unity)](https://docs.frvr.com/engines/unity/modules/storage/): `FRVRSDK.Data.SetItem/GetItem` (local) + `SetCloudItem/GetCloudItem` (cloud).
+- [Social (Unity)](https://docs.frvr.com/engines/unity/modules/social/): `FRVRSDK.Social.CanInvite/Share/Invite`. Screenshot via base64 data URL.
+- [IAP (Unity)](https://docs.frvr.com/engines/unity/modules/iap/): `FRVRSDK.IAP.Purchase/ConsumePurchase/IsReady/GetCatalog/GetProduct/GetProductPrice/GetUnconsumedPurchases` — catalogs/products returned as JSON strings.
+- [Tournaments (Unity)](https://docs.frvr.com/engines/unity/modules/tournaments/): `FRVRSDK.Tournament.*` including `CreateOrPostScore` smart helper.
+- [Notifications (Unity)](https://docs.frvr.com/engines/unity/modules/notifications/): `FRVRSDK.Notifications.CanScheduleMessages/SubscribeScheduleMessages/ScheduleMessage` (Facebook Instant push).
+
+## Cocos Creator (TypeScript extension)
+
+- [Cocos quickstart](https://docs.frvr.com/engines/cocos/quickstart/): Install the extension zip, enable via Extension Manager, attach FRVRSDK component to first scene, build for web-mobile.
+- [Cocos lifecycle](https://docs.frvr.com/engines/cocos/lifecycle/): Lifecycle is handled by the extension — no hooks to wire.
+- [Ads (Cocos)](https://docs.frvr.com/engines/cocos/modules/ads/): `FRVRSDK.instance.showInterstitial/showRewarded` + `isInterstitialReady/isRewardedReady` gates.
+- [Analytics (Cocos)](https://docs.frvr.com/engines/cocos/modules/analytics/): `FRVRSDK.instance.levelStart/levelEnd`.
+- [Local storage (Cocos)](https://docs.frvr.com/engines/cocos/modules/local-storage/): `localStorageSetItem/GetItem/RemoveItem` + batch variants.
+- [Cloud storage (Cocos)](https://docs.frvr.com/engines/cocos/modules/cloud-storage/): `cloudStorageSetItem/GetItem/RemoveItem` + batch variants.
+- [Profile (Cocos)](https://docs.frvr.com/engines/cocos/modules/profile/): `getPlayerId/getPlayerName/getPlayerImage/loadPlayerImage`.
+- [Social (Cocos)](https://docs.frvr.com/engines/cocos/modules/social/): Friends graph + platform share/invite + `isSocialAPISupported`.
+- [Social live (Cocos)](https://docs.frvr.com/engines/cocos/modules/social-live/): Real-time WebSocket — friend status, game invites, broadcast updates.
+- [Tournaments (Cocos)](https://docs.frvr.com/engines/cocos/modules/tournaments/): FRVR tournaments + platform tournaments (`sharePlatformTournament`).
+- [IAP (Cocos)](https://docs.frvr.com/engines/cocos/modules/iap/): `isIAPReady/getIAPCatalog/purchase/consumePurchase/getUnconsumedPurchases`.
+- [Notifications (Cocos)](https://docs.frvr.com/engines/cocos/modules/notifications/): `canScheduleNotifications/subscribeNotifications/scheduleNotification`.
+- [Shortcut (Cocos)](https://docs.frvr.com/engines/cocos/modules/shortcut/): `canCreateShortcut/createShortcut`.
+- [Crossplay (Cocos)](https://docs.frvr.com/engines/cocos/modules/crossplay/): `canMoveToMobile/moveToMobile`.
+- [Entrypoint (Cocos)](https://docs.frvr.com/engines/cocos/modules/entrypoint/): `getEntrypointData/getEntrypointName` — call only after loading completes.
+- [Channel characteristics (Cocos)](https://docs.frvr.com/engines/cocos/modules/channel-characteristics/): `allowsExternalLinks/allowsNavigation`.
+
+## Construct 3 (event-sheet plugin)
+
+- [Construct 3 quickstart](https://docs.frvr.com/engines/construct/quickstart/): Install plugin zip via Addon Manager, add FRVR SDK object to project, disable Offline support in export.
+- [Construct 3 lifecycle](https://docs.frvr.com/engines/construct/lifecycle/): Lifecycle is handled by the plugin + Construct's built-in suspend/resume — no actions to wire.
+- [Ads (Construct 3)](https://docs.frvr.com/engines/construct/modules/ads/): Show Interstitial / Show Rewarded actions + Is Rewarded Ready condition + On rewarded completed trigger.
+- [IAP (Construct 3)](https://docs.frvr.com/engines/construct/modules/iap/): Purchase action, On purchase succeeded/failed triggers, Consume last purchase action, Restore unconsumed purchases.
+- [Storage (Construct 3)](https://docs.frvr.com/engines/construct/modules/storage/): Set/Get local/cloud item + On loaded triggers.
+- [Analytics (Construct 3)](https://docs.frvr.com/engines/construct/modules/analytics/): Level Start/End, Log FTUE, Log Event actions.
+
+## Reference
+
+- [Downloads](https://docs.frvr.com/reference/downloads/): All SDK bundles (core + every channel in modern / ES2015 / IE11 variants) and engine plugin zips, self-hosted on the docs site.
+- [Channels](https://docs.frvr.com/reference/channels/): Channels FRVR supports (web, facebook-instant, facebook-rooms, google-play, ios, samsung-galaxy, samsung-instant-play, xiaomi, dev) + feature-support matrix with runtime `isSupported` / `canX` checks per module.
+- [CDN & bundles](https://docs.frvr.com/reference/cdn/): Load SDK from `cdn.frvr.com/sdk/frvr-sdk.min.js` in `<head>` synchronously during dev; FRVR's pipeline rewrites to local paths and bundles into the game zip for production.
+- [FAQ](https://docs.frvr.com/reference/faq/): Common gotchas.

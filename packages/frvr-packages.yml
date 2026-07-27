@@ -1,0 +1,66 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.frvr.com/reference/downloads/
+notes: >-
+  FRVR ships a first-party games SDK as a CDN-hosted JavaScript core plus thin
+  engine wrappers. It is NOT published to public package registries (npm/PyPI/etc);
+  the web SDK loads from cdn.frvr.com and engine plugins are downloaded from the
+  docs site. FRVR's release pipeline injects the correct per-channel bundle at
+  build time. All artifacts below are first-party (official: true).
+packages:
+  - language: javascript
+    registry: cdn
+    name: frvr-sdk.min.js
+    url: https://cdn.frvr.com/sdk/frvr-sdk.min.js
+    install: '<script src="https://cdn.frvr.com/sdk/frvr-sdk.min.js"></script>'
+    variant: modern (ES2017)
+    official: true
+  - language: javascript
+    registry: cdn
+    name: frvr-sdk.es6.min.js
+    url: https://docs.frvr.com/reference/downloads/
+    install: '<script src="https://cdn.frvr.com/sdk/frvr-sdk.es6.min.js"></script>'
+    variant: ES2015 baseline
+    official: true
+  - language: javascript
+    registry: cdn
+    name: frvr-sdk.ie.min.js
+    url: https://docs.frvr.com/reference/downloads/
+    variant: Internet Explorer 11
+    official: true
+  - language: javascript
+    registry: cdn
+    name: frvr-channel-dev.min.js
+    url: https://cdn.frvr.com/sdk/frvr-channel-dev.min.js
+    install: '<script src="https://cdn.frvr.com/sdk/frvr-channel-dev.min.js"></script>'
+    variant: dev channel (stubs ads/IAP/platform bits for local dev)
+    official: true
+  - language: csharp
+    registry: download
+    name: frvr_sdk1010.unitypackage
+    url: https://docs.frvr.com/engines/unity/quickstart/
+    install: Import the .unitypackage into Unity 6.1+
+    engine: Unity (WebGL exports)
+    version: v1.010
+    official: true
+  - language: typescript
+    registry: download
+    name: frvr-sdk-cocos-3.x.zip
+    url: https://docs.frvr.com/engines/cocos/quickstart/
+    install: Install extension zip via Cocos Creator Extension Manager
+    engine: Cocos Creator 3.8.0+
+    official: true
+  - language: typescript
+    registry: download
+    name: frvr-sdk-cocos-2.4.zip
+    url: https://docs.frvr.com/engines/cocos/quickstart/
+    engine: Cocos Creator 2.4.x (legacy)
+    official: true
+  - language: javascript
+    registry: download
+    name: frvr-construct-1.0.0.10.zip
+    url: https://docs.frvr.com/engines/construct/quickstart/
+    install: Install plugin zip via Construct 3 Addon Manager
+    engine: Construct 3
+    version: v1.0.0.10
+    official: true

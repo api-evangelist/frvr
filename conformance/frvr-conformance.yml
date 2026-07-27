@@ -1,0 +1,25 @@
+generated: '2026-07-19'
+method: derived
+source:
+  - https://docs.frvr.com/modules/consent/
+  - https://docs.frvr.com/modules/auth/
+notes: >-
+  Cross-cutting standards the FRVR SDK conforms to, derived from the documented
+  consent and auth surfaces. FRVR publishes no formal compliance program (no SOC 2 /
+  ISO 27001 / PCI page found), so no Compliance pointer is emitted.
+standards:
+  - id: iab-tcf-v2
+    conforms: true
+    evidence: consent module integrates IAB TCF v2 CMPs (and CookiePro)
+  - id: jwt-bearer
+    conforms: true
+    evidence: FRVR.auth.getAccessToken() returns a JWT used as a bearer token for backend calls
+  - id: oauth2
+    conforms: partial
+    evidence: SDK-mediated federated login (Facebook/Google Play/Apple) + FRVR accounts; no public OAuth2 authorization-server surface documented
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: SDK surface (not HTTP); errors delivered via callbacks/promise rejections
+  - id: openapi
+    conforms: false
+    evidence: no public REST/OpenAPI surface; developer contract is a JavaScript SDK
