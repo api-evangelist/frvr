@@ -64,6 +64,93 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-FRVR is a company surfaced as a portfolio company of accel and added to the API Evangelist network as a stub for enrichment. Sector: gaming. This profile is a lead awaiting the enrichment pipeline.
+FRVR is a gaming company that builds and distributes instant, no-download HTML5 games across channels beyond the app stores — Facebook Instant, Google Play, iOS WebView, Samsung, Xiaomi, and web portals. Its developer surface is the FRVR SDK: a single JavaScript SDK (with thin wrappers for Unity WebGL exports, Cocos Creator, and Construct 3) that integrates ads, in-app purchases, analytics, auth, local and cloud storage, social/friends, leaderboards, tournaments, challenges, consent, and notifications into a game, then adapts per distribution channel while FRVR's release pipeline injects the correct channel bundle at build time. FRVR also operates the UpIt no-code game creation tool. Backed by Accel.
 
-Backed by: accel — https://frvr.com/
+**Areas:** Company · Gaming · Games · Game Development · SDK · HTML5 · Instant Games · Monetization · Ads · In-App Purchases
+
+## FRVR on APIs.io
+
+Everything profiled for FRVR is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/frvr/](https://apis.io/providers/frvr/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [FRVR SDK](https://apis.io/apis/frvr/frvr-sdk/) — The FRVR games SDK — one JavaScript SDK (plus Unity, Cocos Creator, and Construct 3 wrappers) that integrates ads, IAP, analytics, auth, storage, social,…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Frvr Authentication](https://apis.io/security/frvr/frvr-authentication/)
+- [Frvr Domain Security](https://apis.io/security/frvr/frvr-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://frvr.com/)
+- [Documentation](https://docs.frvr.com/)
+- [Getting started](https://docs.frvr.com/start/overview/)
+- [API reference](https://docs.frvr.com/reference/channels/)
+- [Sign up](https://developers.frvr.com/signup)
+- [Support](https://docs.frvr.com/reference/faq/)
+- [Blog](https://frvr.com/blog/)
+- [Terms of service](https://frvr.com/legal#TermsofService)
+- [Privacy policy](https://frvr.com/legal#PrivacyPolicy)
+- [GitHub](https://github.com/frvraps)
+
+## API Evangelist rating
+
+**Kin Score 28.8** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 0.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 61.9 |
+| Access clarity | 34.2 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 24.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/frvr/](https://apis.io/providers/frvr/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for FRVR: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/frvr/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
